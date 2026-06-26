@@ -1,4 +1,4 @@
-# 🛡️ ShadowKnight v4.0
+# 🛡️ ShadowKnight v6.0
 
 [![DOI](https://zenodo.org/badge/1152719327.svg)](https://doi.org/10.5281/zenodo.18524153)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
