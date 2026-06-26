@@ -1,0 +1,43 @@
+# ShadowNet Nexus (ShadowKnight) - Gemini-Powered Anti-Forensics Detection
+# Core Dependencies
+
+# Gemini API
+google-generativeai>=0.3.0
+google-genai>=0.2.0
+
+# System Monitoring & WMI (Windows)
+psutil>=5.9.0
+wmi>=1.5.1
+pywin32>=306
+
+# Configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# Data Validation & Security
+pydantic>=2.0.0
+cryptography>=41.0.0
+PyJWT>=2.8.0
+
+# Utilities
+requests>=2.31.0
+
+# API Server (Phase 3 Web Dashboard)
+fastapi>=0.100.0
+uvicorn>=0.22.0
+sqlalchemy>=2.0.0
+
+# Mathematical & ML Models (Phase 1)
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# Cryptographic Timestamping (Phase 1)
+rfc3161ng>=2.1.0
+
+# Forensics (Phase 2)
+# analyzeMFT>=3.0.0 # (Optional: Full raw MFT parser)
+# windowsprefetch>=1.0.4 # (Optional: Advanced Prefetch parsing)
+
+# Optional: Enhanced Features
+colorama>=0.4.6  # Colored terminal output
+rich>=13.0.0     # Rich terminal formatting

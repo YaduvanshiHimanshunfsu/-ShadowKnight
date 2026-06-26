@@ -1,0 +1,176 @@
+# ==========================================================
+# SHADOWNET NEXUS - HYBRID CONFIGURATION (v4.1)
+# ==========================================================
+
+shadow_knight:
+
+  # --------------------------------------------------------
+  # MODE CONTROL
+  # --------------------------------------------------------
+  mode: "hybrid"     # Options: realtime | deep | hybrid
+
+  # --------------------------------------------------------
+  # Gemini AI Configuration
+  # --------------------------------------------------------
+  models:
+    fast: gemini-2.5-flash
+    intelligent: gemini-2.5-flash
+
+  # --------------------------------------------------------
+  # Evidence Vault Settings
+  # --------------------------------------------------------
+  evidence_vault:
+    path: ./evidence
+    retention_days: 90
+    encryption: true
+    max_size_gb: 100
+
+  # --------------------------------------------------------
+  # MONITORING CONFIGURATION
+  # --------------------------------------------------------
+  monitoring:
+
+    # Core Monitors
+    enable_process_monitoring: true
+    enable_file_monitoring: true
+    enable_network_monitoring: true
+
+    # ======================================================
+    # 🔥 PROBLEM STATEMENT 1 - NTFS TIMELINE ENGINE
+    # ======================================================
+    enable_ntfs_analysis: true
+    ntfs_scan_path: "C:\\Users"
+    ntfs_max_files: 500
+    ntfs_confidence_weight: 30
+
+    # ======================================================
+    # 🔥 PROBLEM STATEMENT 2 - ENTROPY ENGINE
+    # ======================================================
+    enable_disk_analysis: true
+    disk_scan_path: "C:\\Users"
+    disk_min_file_size_mb: 5
+    disk_max_files_scan: 1
+    disk_timeout_seconds: 5
+    disk_confidence_weight: 30
+
+    entropy_block_size: 4096
+    entropy_sample_chunk_size: 65536
+    disk_entropy_threshold: 7.5
+
+    # ======================================================
+    # 🔥 PROBLEM STATEMENT 3 - WIPE PATTERN ENGINE
+    # ======================================================
+    wipe_block_size: 4096
+    wipe_random_entropy_threshold: 7.95
+    wipe_ratio_trigger: 0.5
+
+    # ======================================================
+    # HYBRID SCORING MODEL
+    # ======================================================
+    ai_confidence_weight: 40
+    ntfs_weight: 30
+    disk_weight: 30
+
+    severity_critical_threshold: 70
+    severity_high_threshold: 40
+
+    enable_confidence_downgrade_on_fallback: true
+
+    # ======================================================
+    # PERFORMANCE CONTROL
+    # ======================================================
+    enable_parallel_scan: true
+    max_worker_threads: 2
+    enable_timeout_protection: true
+
+    # ======================================================
+    # SAFETY CONTROL
+    # ======================================================
+    skip_system_directories: true
+    exclude_paths:
+      - "C:\\Windows"
+      - "C:\\Program Files"
+      - "C:\\Program Files (x86)"
+
+    # ======================================================
+    # SUSPICIOUS KEYWORDS (Pre-filter before AI call)
+    # ======================================================
+    suspicious_keywords:
+      - wevtutil
+      - vssadmin
+      - cipher
+      - timestomp
+      - bcdedit
+      - Clear-EventLog
+      - sdelete
+      - bleachbit
+      - ccleaner
+      - mimikatz
+      - procdump
+      - dumpert
+      - mshta
+      - certutil
+      - bitsadmin
+      - EncodedCommand
+      - -Enc
+      - Invoke-Expression
+      - iex
+      - powershell -w hidden
+      - regsvr32
+      - wmic
+      - scrcons
+      - schtasks /create
+      - curl -L
+      - wget
+      - bash -i
+      - nc -e
+      - netcat
+      - /dev/tcp
+      - lsass
+      - taskmgr
+      - samlib
+      - ntds.dit
+      - mountvol
+      - fsutil usn deletejournal
+
+  # --------------------------------------------------------
+  # ALERTING CONFIGURATION
+  # --------------------------------------------------------
+  alerting:
+    enable_slack: false
+    slack_webhook: ""
+
+    enable_email: false
+    email_recipients:
+      - security@company.com
+
+    enable_console: true
+
+    min_confidence_for_alert: 0.7
+    min_severity_for_notification: HIGH
+
+  # --------------------------------------------------------
+  # API RATE LIMITING
+  # --------------------------------------------------------
+  rate_limiting:
+    max_api_calls_per_minute: 20
+    cache_results: true
+    cache_ttl_seconds: 10
+    batch_non_urgent: true
+
+  # --------------------------------------------------------
+  # THREAT INTELLIGENCE
+  # --------------------------------------------------------
+  threat_intel:
+    enable_mitre_attack: true
+    enable_threat_actor_db: true
+    update_interval_hours: 24
+
+  # --------------------------------------------------------
+  # LOGGING
+  # --------------------------------------------------------
+  logging:
+    level: INFO
+    file: ./logs/shadow_knight.log
+    max_size_mb: 100
+    backup_count: 5
