@@ -52,3 +52,6 @@ desktop.ini
 reports/*.md
 reports/*.pdf
 !reports/.gitkeep
+
+# Exclude VAJRA_CRS
+VAJRA_CRS/

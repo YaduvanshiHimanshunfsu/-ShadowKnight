@@ -38,6 +38,14 @@ rfc3161ng>=2.1.0
 # analyzeMFT>=3.0.0 # (Optional: Full raw MFT parser)
 # windowsprefetch>=1.0.4 # (Optional: Advanced Prefetch parsing)
 
+# Static Analysis (AI Kavach CRS — Phase 4 Static Analysis Layer)
+semgrep>=1.45.0       # Multi-language SAST (2000+ security rules)
+bandit>=1.7.5         # Python-specific security scanner
+
+# Regression Harness (AI Kavach CRS — Regression Proof Layer)
+pytest>=7.4.0
+pytest-json-report>=1.5.0  # JSON output for proof reports
+
 # Optional: Enhanced Features
 colorama>=0.4.6  # Colored terminal output
 rich>=13.0.0     # Rich terminal formatting
