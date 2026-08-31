@@ -492,12 +492,3 @@ ShadowKnight CRS is built from the ground up to ensure digital evidence generate
 
 ---
 
-## 📄 License & Attribution
-
-Distributed under the **MIT License**.
-
-```
-Copyright (c) 2026 ShadowKnight Contributors
-DOI: 10.5281/zenodo.18524153
-Built for AI Kavach 2026 | Terrier Cyber Quest 3.0 | Indian Armed Forces Defense Challenge
-```
